@@ -1,6 +1,6 @@
 import { useState } from "react";
 import axios from "axios";
-import type { Tasks } from "./types";
+import type { Task } from "./types";
 
 
 const WeeklyTimeSheet = () => {
@@ -8,7 +8,7 @@ const WeeklyTimeSheet = () => {
     const API = "http://localhost:5000"
 
     const [date, setDate] = useState("");
-    const [tasks, setTasks] = useState<Tasks[]>([]);
+    const [tasks, setTasks] = useState<Task[]>([]);
 
     const fetchTasks = async (selectedDate: string) => {
         try {

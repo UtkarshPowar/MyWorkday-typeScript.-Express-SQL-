@@ -161,6 +161,33 @@ app.get("/weekly-tasks", async (req, res) => {
     }
 })
 
+app.get("/dashboard", async (req, res) => {
+    try {
+
+        const users = await sql.query`SELECT COUNT(*) AS totalUsers FROM Users`
+        const projects = await sql.query`SELECT COUNT(*) AS totalProjects FROM Projects`
+        const tickets = await sql.query`SELECT COUNT(*) AS totalTickets FROM Tickets`
+
+        const hours = await sql.query`
+            SELECT 
+                ISNULL(SUM(Hours),0) AS totalHours,
+                ISNULL(SUM(Minutes),0) AS totalMinutes
+            FROM Tasks
+        `
+
+        res.json({
+            totalUsers: users.recordset[0].totalUsers,
+            totalProjects: projects.recordset[0].totalProjects,
+            totalTickets: tickets.recordset[0].totalTickets,
+            totalHours: hours.recordset[0].totalHours,
+            totalMinutes: hours.recordset[0].totalMinutes
+        })
+
+    } catch (err) {
+        res.status(500).send(err.message)
+    }
+})
+
 app.listen(5000, () => {
     console.log("Server running on port 5000")
 })
