@@ -70,7 +70,9 @@ export function UserTab() {
                     <input type="text" placeholder="Contact Number" value={contactNumber} onChange={(e) => setContactNumber(e.target.value)} className="flex-1 border border-gray-300 rounded-lg px-4 py-2" />
                     <button type="submit" className="bg-blue-600 text-white px-6 py-2 rounded-lg hover:bg-blue-700 transition cursor-pointer">Add</button>
                 </form>
-                <h2 className="text-xl font-semibold mb-4 text-gray-700">User List</h2>
+                <h2 className="text-xl font-semibold mb-4 text-gray-700">
+                    User List
+                </h2>
                 <div className="overflow-x-auto">
                     <table className="w-full border border-gray-200 rounded-lg overflow-hidden">
                         <thead className="bg-gray-200 text-gray-700">

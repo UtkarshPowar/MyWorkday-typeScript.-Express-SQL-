@@ -33,8 +33,8 @@ const WeeklyTimeSheet = () => {
                 }}
                 className="border px-4 py-2 rounded mb-6"
             />
-            <table className="w-full border">
-                <thead className="bg-gray-200">
+            <table className="w-full border border-gray-200 rounded-lg overflow-hidden">  {/* w-full border */}
+                <thead className="bg-gray-200 text-gray-700">
                     <tr>
                         <th className="p-3 text-left">Date</th>
                         <th className="p-3 text-left">Employee</th>
