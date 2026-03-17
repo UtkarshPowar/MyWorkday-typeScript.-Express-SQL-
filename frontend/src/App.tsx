@@ -32,26 +32,8 @@ function App() {
     return (
         <div className="min-h-screen bg-gray-100">
             <Navbar activeTab={activeTab} setActiveTab={setActiveTab} />
-            <div className=""> {/* max-w-6xl mx-auto p-10 */}
-                
+            <div>
                 {activeTab === "HOME" && <Dashboard />}
-                
-                {/* {activeTab === "HOME" && (
-                    <div
-                        className="relative min-h-screen flex items-center justify-center bg-cover bg-center"
-                        style={{
-                            backgroundImage: `url(${workspace})`
-                        }}
-                    >
-                        <div className="absolute inset-0 bg-black/50"></div>
-                        <div className="relative bg-amber-500/40 backdrop-blur-md rounded-xl p-10 max-w-3xl text-center text-white shadow-xl">
-                            <h1 className="text-4xl font-bold mb-4">
-                                Welcome to My Workday
-                            </h1>
-                        </div>
-                    </div>
-                )} */}
-
                 {activeTab === "PROJECTS" && <ProjectTab projects={projects} onRefresh={fetchProjects} />}
                 {activeTab === "TICKETS" && <TicketTab projects={projects} />}
                 {activeTab === "TASKS" && <TaskTab />}
