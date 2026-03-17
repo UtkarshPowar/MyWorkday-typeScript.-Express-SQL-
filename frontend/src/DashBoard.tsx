@@ -38,18 +38,18 @@ function Dashboard() {
             }}
         >
             <div className="absolute inset-0 bg-black/50"></div>
-            <div className="relative bg-amber-500/40 backdrop-blur-md rounded-xl p-10 max-w-3xl text-center text-white shadow-xl">
+            <div className="relative bg-amber-500/20 backdrop-blur-md rounded-xl p-10 max-w-3xl text-center text-white shadow-xl mt-5 mb-40">
                 <h1 className="text-4xl font-bold mb-4">
                     Welcome to My Workday
                 </h1>
             </div>
+            <div className="relative bg-teal-500/10 backdrop-blur-md rounded-xl px-10 py-6 max-w-3xl text-center text-white shadow-xl mb-5">
+                <h2 className="text-4xl font-bold mb-4 text-center text-olive-300">
+                    Dashboard
+                </h2>
+            </div>
 
-
-            <h2 className="text-3xl font-bold mb-8">
-                Dashboard
-            </h2>
-
-            <div className="grid grid-cols-4 gap-6 text-gray">
+            <div className="grid grid-cols-4 gap-6 text-gray mb-50">
                 <Card title="Users" value={data.totalUsers} />
                 <Card title="Projects" value={data.totalProjects} />
                 <Card title="Tickets" value={data.totalTickets} />
