@@ -8,7 +8,7 @@ import { TicketTab } from "./TicketTab"
 import TaskTab from "./TaskTab"
 import WeeklyTimeSheet from "./WeeklyTimeSheet"
 import type { Project } from "./types"
-import workspace from "./assets/workspace.jpg"
+import Dashboard from "./DashBoard"
 
 function App() {
 
@@ -33,7 +33,10 @@ function App() {
         <div className="min-h-screen bg-gray-100">
             <Navbar activeTab={activeTab} setActiveTab={setActiveTab} />
             <div className=""> {/* max-w-6xl mx-auto p-10 */}
-                {activeTab === "HOME" && (
+                
+                {activeTab === "HOME" && <Dashboard />}
+                
+                {/* {activeTab === "HOME" && (
                     <div
                         className="relative min-h-screen flex items-center justify-center bg-cover bg-center"
                         style={{
@@ -47,7 +50,7 @@ function App() {
                             </h1>
                         </div>
                     </div>
-                )}
+                )} */}
 
                 {activeTab === "PROJECTS" && <ProjectTab projects={projects} onRefresh={fetchProjects} />}
                 {activeTab === "TICKETS" && <TicketTab projects={projects} />}
