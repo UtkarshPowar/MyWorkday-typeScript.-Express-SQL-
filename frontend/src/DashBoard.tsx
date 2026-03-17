@@ -27,8 +27,7 @@ function Dashboard() {
         fetchDashboard()
     }, [])
 
-    const totalTime =
-        data.totalHours + Math.floor(data.totalMinutes / 60)
+    const totalTime = data.totalHours + Math.floor(data.totalMinutes / 60)
 
     return (
         <div
